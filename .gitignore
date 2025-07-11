@@ -1,4 +1,7 @@
-# ROS Colcon Build Artifacts
+# Colcon Build Artifacts
+Model_ws/build/
+Model_ws/install/
+Model_ws/log/
 ROS_action/build/
 ROS_action/install/
 ROS_action/log/
