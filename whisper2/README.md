@@ -25,14 +25,8 @@ whisper2/
 
 ### 🔊 음성 인식 (STT)
 - **모델**: `TheoJo/whisper-tiny-ko` (한국어 특화 Whisper 모델)
-- **샘플링 레이트**: 16kHz
 - **지원 언어**: 한국어 (Korean)
 - **GPU/CPU 자동 감지**: CUDA 사용 가능 시 GPU 가속
-
-### 🚀 실시간 처리
-- **버퍼링 모드**: 5초 단위로 음성 데이터 수집 후 일괄 처리
-- **스트리밍 모드**: 실시간 음성 인식 및 즉시 결과 반환
-- **QoS 설정**: RELIABLE + TRANSIENT_LOCAL 보장
 
 ## 📡 ROS2 토픽 인터페이스
 
