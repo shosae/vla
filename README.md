@@ -85,8 +85,8 @@ graph TD
 | `mic_pub` | Audio capture | 🎤 Jetson mic | `/audio/raw` |
 | `whisper2` | Speech-to-Text | `/audio/raw` | `/stt/text`, `/audio/transcript` |
 | `camera_pub` | Image capture | 📷 CSI camera | `/camera/image_raw` |
-| `camera_sub` | Image Saver | `/camera/image_raw` |
-| `object_pose` | Object localization	 | `/camera/image_raw` + `/stt/text` | `/object/pose` |
+| `camera_sub` | Image save | `/camera/image_raw` |
+| `object_pose` | Object localization | `/camera/image_raw` + `/stt/text` | `/object/pose` |
 | `vla_node` | Multimodal inference | `/camera/image_raw` + `/audio/transcript` | Inference Result |
 | `omni_controller` | Hardware Control | `/object_info` | Control command |
 <br>
