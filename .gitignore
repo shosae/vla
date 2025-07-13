@@ -8,3 +8,9 @@ ROS_action/log/
 whisper2/ros2_ws/build/
 whisper2/ros2_ws/install/
 whisper2/ros2_ws/log/
+
+# Python cache
+**/*.pyc
+
+# Model file
+**/*.pt 
