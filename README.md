@@ -95,7 +95,7 @@ vla/
 │       │
 │       ├── object_pose/        # 🎯 객체(목표) 위치 추정
 │       │   └── object_pose/
-│       │       ├── cup_publisher.py # 테스트 스크립트
+│       │       ├── cup_publisher.py # 테스트용: cup.png → /camera/image_raw publisher
 │       │       └── object_pose_publisher.py 
 │       │
 │       ├── omni_controller/    # 🚗 옴니휠 제어
