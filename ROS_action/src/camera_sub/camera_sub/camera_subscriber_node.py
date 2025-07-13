@@ -49,9 +49,7 @@ class CameraSubscriberNode(Node):
         self.frame_count += 1
 
         self.get_logger().info(f'🖼️ 저장 완료 ({self.frame_count}): {filename}')
-				
-				#모델에 넘겨줄 때는 cv_image를 넘겨주는 걸로
-			
+							
 def main(args=None):
     rclpy.init(args=args)
     node = CameraSubscriberNode()
