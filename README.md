@@ -18,7 +18,7 @@ Jetson 플랫폼에서 ROS2를 기반으로 구현되었으며, AI 모델을 활
 
 ### **📋 시스템 환경**
 - **Platform**: NVIDIA Orin NX 16GB
-- **OS**: Ubuntu 22.04
+- **OS**: Ubuntu 22.04 (Jetpack 6.x)
 - **ROS2**: Humble Hawksbill
 - **CUDA**: 12.2+
 - **Python**: 3.10+
