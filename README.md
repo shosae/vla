@@ -101,7 +101,7 @@ vla/
 │       ├── omni_controller/    # 🚗 옴니휠 제어
 │       │   └── omni_controller/omni_drive_node.py
 │       │
-│       └── ros_action_msgs/    # 🔗 커스텀 메시지(/object_info)
+│       └── custom_msgs/    # 🔗 커스텀 메시지
 │           └── msg/ObjectInfo.msg
 │
 └── whisper2/         
