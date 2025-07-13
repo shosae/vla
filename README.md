@@ -8,7 +8,6 @@ Jetson 기반 ROS2 멀티모달 로봇 제어 시스템
 [![Docker](https://img.shields.io/badge/Docker-Enabled-blue.svg)](https://www.docker.com/)
 
 ---
-
 ## 📋 **프로젝트 개요**
 
 이 프로젝트는 **음성 명령**과 **카메라 입력**을 통해 로봇을 지능적으로 제어하는 VLA (Vision-Language-Action)의 프로토타입 시스템입니다.  
@@ -24,12 +23,31 @@ Jetson 플랫폼에서 ROS2를 기반으로 구현되었으며, AI 모델을 활
 - **Python**: 3.10+
 - **Docker**: 20.10+  
 
-### **🎯 주요 기능**
-- 🎤 **음성 인식**: Whisper 기반 STT로 자연어 명령 처리
-- 📷 **시각 인식**: 실시간 카메라 이미지 처리
-- 🎯 **목표 인식**: 이미지를 기반으로 목표까지의 방향 추정 
-- 🧠 **VLM 추론**: 멀티모달 AI(Paligemma)를 통한 현재 상황 인식
-- 🚗 **옴니휠 제어**: 정밀한 로봇 이동 제어
+---
+
+### **🎯 주요 기능 및 동작 흐름**
+- **🎤 음성 인식 (STT)**
+    - Whisper 기반 음성 인식기로부터 명령어를 받아 텍스트로 변환하고,
+    - VLM 입력으로 사용되어 **상황 판단**에 활용되며,
+    - 텍스트 내 "사람", "의자", "노트북" 등의 키워드를 추출하여 **목표 객체**로 자동 설정합니다.  
+
+- **📷 시각 인식 및 객체 검출**
+    - VLM 입력으로 사용되어 상황 판단에 활용되며,
+    - YOLO를 통해 설정된 객체를 탐지하고,
+    - 바운딩박스 중심 좌표를 기반으로 **객체의 위치를 추정**합니다.
+
+- **🎯 방향 계산**
+    - 탐지된 객체의 **중심 좌표**를 이용해 로봇 기준의 **상대 방향(각도)을 계산**합니다.  
+
+- **🧠 상황 인식 (VLM)**
+    - Paligemma 기반 멀티모달 AI를 통해 **현재 상황**에 대한 **고차원적인 해석**이 가능하며,
+    - 향후 VLA(Vision-Language-Action) 구조로 확장될 수 있습니다.  
+
+- **🚗 정밀 이동 제어**
+    - 계산된 방향 및 거리 정보는 /object_info 토픽으로 퍼블리시되며, 
+    - 로봇은 해당 정보를 바탕으로 **목표 객체를 향해 회전 및 전진**합니다.
+    - 목표에 근접하면 **센서 값**에 따라 **자동 정지**합니다.
+
 <br>
 
 
@@ -65,7 +83,7 @@ graph TD
 | **노드** | **기능** | **입력** | **출력** |
 |----------|----------|----------|----------|
 | `mic_pub` | Audio capture | 🎤 Jetson mic | `/audio/raw` |
-| `whisper2` | Speech-to-Text | `/audio/raw` | `/stt/text` |
+| `whisper2` | Speech-to-Text | `/audio/raw` | `/stt/text`, `/audio/transcript` |
 | `camera_pub` | Image capture | 📷 CSI camera | `/camera/image_raw` |
 | `camera_sub` | Image subscriber | `/camera/image_raw` |
 | `object_pose` | Object localization	 | `/camera/image_raw` + `/stt/text` | `/object/pose` |
