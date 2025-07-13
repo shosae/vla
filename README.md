@@ -81,7 +81,7 @@ vla/
 │           └── vla_node/simple_inference.py
 │
 ├── ROS_action/                 # 🤖 메인 ROS2 워크스페이스
-│   └── src/                    # 소스 코드
+│   └── src/                    
 │       ├── camera_pub/         # 📷 Camera Publihser
 │       │   └── camera_pub/camera_publisher_node.py
 │       │
