@@ -11,15 +11,15 @@ import cv2
 from ament_index_python.packages import get_package_share_directory
 
 
-class CupPublisher(Node):
+class ChairPublisher(Node):
     def __init__(self):
-        super().__init__('cup_publisher')
+        super().__init__('chair_publisher')
         self.bridge = CvBridge()
         self.pub = self.create_publisher(Image, '/camera/image_raw', 1)
 
-        # 패키지 공유 디렉토리에서 resource/cup.png 찾기
+        # 패키지 공유 디렉토리에서 resource/chair.png 찾기
         pkg_share = get_package_share_directory('object_pose')
-        img_path = os.path.join(pkg_share, 'resource', 'cup.png')
+        img_path = os.path.join(pkg_share, 'resource', 'chair.png')
         if not os.path.isfile(img_path):
             self.get_logger().error(f'이미지 파일을 찾을 수 없습니다: {img_path}')
             rclpy.shutdown()
@@ -42,7 +42,7 @@ class CupPublisher(Node):
     def timer_callback(self):
         if not self.published:
             self.pub.publish(self.msg)
-            self.get_logger().info('cup.png 이미지를 /camera/image_raw 토픽으로 퍼블리시했습니다.')
+            self.get_logger().info('chair.png 이미지를 /camera/image_raw 토픽으로 퍼블리시했습니다.')
             self.published = True
         else:
             rclpy.shutdown()
@@ -50,7 +50,7 @@ class CupPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = CupPublisher()
+    node = ChairPublisher()
     rclpy.spin(node)
 
 

@@ -22,7 +22,7 @@ setup(
     entry_points={
         'console_scripts': [
             'object_pose_publisher = object_pose.object_pose_publisher:main',
-            'cup_publisher = object_pose.cup_publisher:main'
+            'chair_publisher = object_pose.chair_publisher:main'
         ],
     },
 )
