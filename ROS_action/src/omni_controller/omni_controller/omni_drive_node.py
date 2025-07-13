@@ -4,7 +4,7 @@ from rclpy.node import Node
 from pop.driving import Driving
 from pop.Psd import Psd
 from pop.Ultrasonic import Ultrasonic
-from ros_action_msgs.msg import ObjectInfo
+from custom_msgs.msg import ObjectInfo
 import time
 
 class OmniDriveNode(Node):

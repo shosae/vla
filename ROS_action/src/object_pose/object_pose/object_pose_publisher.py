@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from std_msgs.msg import String
-from ros_action_msgs.msg import ObjectInfo
+from custom_msgs.msg import ObjectInfo
 from cv_bridge import CvBridge
 import torch
 import numpy as np
