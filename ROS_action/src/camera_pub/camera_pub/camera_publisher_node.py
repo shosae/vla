@@ -11,7 +11,7 @@ class CameraPublisherNode(Node):
         self.publisher_ = self.create_publisher(Image, '/camera/image_raw', 1)
         self.bridge = CvBridge()
 
-        # Jetson Nano CSI 카메라용 GStreamer 파이프라인
+        # Jetson + IMX219 GStreamer 파이프라인
         gst_str = (
             "nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, "
             "format=NV12, framerate=30/1 ! nvvidconv ! video/x-raw, format=BGRx ! "
@@ -36,7 +36,7 @@ class CameraPublisherNode(Node):
             self.get_logger().error('⚠️ 프레임 읽기 실패')
             return True  # 카메라는 열려 있지만 프레임을 못 읽은 경우, 재시도 가능
 
-        # 이미지 뒤집기
+        # 이미지 뒤집기(카메라가 뒤집혀있기 때문)
         frame = cv2.rotate(frame, cv2.ROTATE_180)
 
         msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
