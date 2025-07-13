@@ -104,9 +104,9 @@ vla/
 │       └── ros_action_msgs/    # 🔗 커스텀 메시지
 │           └── msg/ObjectInfo.msg
 │
-└── whisper2/         # 🧠 STT 모델 워크스페이스
+└── whisper2/         
     ├── Dockerfile    # Docker 컨테이너 설정
-    ├── ros2_ws/      # ROS2 워크스페이스
+    ├── ros2_ws/      # 🧠 STT 모델 워크스페이스
     │   └── src/
     │       └── whisper_stt/    # Whisper STT 패키지
     │           └── whisper_stt/
