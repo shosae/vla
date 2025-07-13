@@ -41,7 +41,7 @@ graph TD
     B -->|/stt/text| C[🎯 object_pose]
     D[📷 camera_pub] -->|/camera/image_raw| C
     D -->|/camera/image_raw| H[🤖 vla_node]
-    B -->|/stt/text| H
+    B -->|/audio/transcript| H
     C -->|/object_info| F[🚗 omni_controller]
     F -->G[🏎️ Control Command]
     H -->I[🟢 Inference Result]
@@ -69,7 +69,7 @@ graph TD
 | `camera_pub` | Image capture | 📷 CSI camera | `/camera/image_raw` |
 | `camera_sub` | Image subscriber | `/camera/image_raw` |
 | `object_pose` | Object localization	 | `/camera/image_raw` + `/stt/text` | `/object/pose` |
-| `vla_node` | Multimodal inference | `/camera/image_raw` + `/stt/text` | Inference Result |
+| `vla_node` | Multimodal inference | `/camera/image_raw` + `/audio/transcript` | Inference Result |
 | `omni_controller` | Hardware Control | `/object_info` | Control command |
 <br>
 
