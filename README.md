@@ -105,10 +105,10 @@ vla/
 │       ├── camera_pub/         # 📷 Camera Publihser
 │       │   └── camera_pub/camera_publisher_node.py
 │       │
-│       ├── camera_sub/         # 📷 Camera Subscriber
+│       ├── camera_sub/         # 📷 Camera Subscriber(Image Saver)
 │       │   └── camera_sub/camera_subscriber_node.py
 │       │
-│       ├── mic_pub/            # 🎤 Mic Publisher
+│       ├── mic_pub/            # 🎤 Audio Publisher
 │       │   └── mic_pub/mic_publisher_node.py
 │       │
 │       ├── object_pose/        # 🎯 객체(목표) 위치 추정
@@ -118,8 +118,8 @@ vla/
 │       │
 │       ├── omni_controller/    # 🚗 옴니휠 제어
 │       │   └── omni_controller/omni_drive_node.py
-│       │
-│       └── custom_msgs/    # 🔗 커스텀 메시지
+│       │    
+│       └── custom_msgs/    # 🔗 커스텀 메시지(ObjectInfo(angle, distance)
 │           └── msg/ObjectInfo.msg
 │
 └── whisper2/         
