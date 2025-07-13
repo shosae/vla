@@ -26,8 +26,9 @@ Jetson 기반 ROS2 멀티모달 로봇 제어 시스템
 ### **🎯 주요 기능**
 - 🎤 **음성 인식**: Whisper 기반 STT로 자연어 명령 처리
 - 📷 **시각 인식**: 실시간 카메라 이미지 처리
+- 🎯 **목표 인식**: 이미지를 기반으로 목표까지의 방향 추정 
 - 🧠 **VLM 추론**: 멀티모달 AI(Paligemma)를 통한 현재 상황 인식
-- 🚗 **옴니휠 제어**: 정밀한 로봇 이동 제어  
+- 🚗 **옴니휠 제어**: 정밀한 로봇 이동 제어
 <br>
 
 
@@ -99,7 +100,7 @@ vla/
 │       ├── omni_controller/    # 🚗 옴니휠 제어
 │       │   └── omni_controller/omni_drive_node.py
 │       │
-│       └── ros_action_msgs/    # 🔗 커스텀 메시지/액션
+│       └── ros_action_msgs/    # 🔗 커스텀 메시지
 │           └── msg/ObjectInfo.msg
 │
 └── whisper2/
