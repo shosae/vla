@@ -120,7 +120,7 @@ vla/
 
 | **역할** | **담당자** | **GitHub** |
 |----------|-----------|------------|
-| 🎤 Audio & STT | @윤지우, @양동건 | [@jiwoo](https://github.com/jiwoo), [@KNDG01001](https://github.com/KNDG01001) |
-| 🧠 VLM & AI | @이민우, @하유빈 | [@minuum](https://github.com/minuum), [@yubeen](https://github.com/yubeen) |
+| 🎤 Audio & STT | @윤지우, @양동건 | [@jiwoo](https://github.com/wehaveaeraser), [@KNDG01001](https://github.com/KNDG01001) |
+| 🧠 VLM & AI | @이민우, @하유빈 | [@minuum](https://github.com/minuum), [@yubeen](https://github.com/Kyle-Riss) |
 | 📷 Camera & 🚗 Robot Control| @최용석 | [@shosae](https://github.com/choiyongseok) |
 ---
